@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Multiclass Image Classification</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	
+<link rel="stylesheet" href="{{url_for('static', filename='stylesheets/search.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='stylesheets/menu.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='stylesheets/home.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='stylesheets/footer.css')}}">
+	<link rel="shortcut icon" type="image/ico" href="{{url_for('static', filename = 'images/favicon.ico') }}">
+</head>
+
+<body>
+
+
+	<h1>Multiclass Image Classification using Transfer Learning</h1>
+	<!-- https://webdevtrick.com/jquery-corner-expand-menu/ -->
+
+
+
+
+  <div class="container">
+  <a href="/home" class="first"><i class="fa fa-home fa-2x"></i></a>
+  <a href="/search" class="second"><i class="fa fa-search fa-2x"></i></a>
+  <a href="https://github.com/Prem-Jain/Multiclass-Image-Classification-Using-Transfer-Learning" class="third"><i class="fa fa-code fa-2x"></i></a>
+ 
+  <a href="#" class="bigOne"><i class="fa fa-home fa-3x"></i></a>
+</div>
+
+
+<script>// Code By Webdevtrick ( https://webdevtrick.com )
+$(document).ready(function() {
+
+  // activeX = true ==> EXPAND
+  // activeX = false ==> COLLAPSE
+  var active1 = false;
+  var active2 = false;
+  var active3 = false;
+
+
+    $('.container').on('mousedown touchstart', function() {
+    
+      if (!active1){
+        $(this).find('.first').css({
+          'background-color': '#04AA6D',
+          'transform': 'translate(0px,125px)'});
+      } else{
+        $(this).find('.first').css({
+          'background-color': 'gray', 
+          'transform': 'none'});
+      } 
+
+      if (!active2){
+        $(this).find('.second').css({
+          'background-color': '#04AA6D', 
+          'transform': 'translate(60px,105px)'});
+      } else{
+        $(this).find('.second').css({
+          'background-color': 'gray', 
+          'transform': 'none'});
+      } 
+
+      if (!active3){
+        $(this).find('.third').css({
+          'background-color': '#04AA6D', 
+          'transform': 'translate(105px,60px)'});
+      } else{
+        $(this).find('.third').css({
+          'background-color': 'gray', 
+          'transform': 'none'});
+      } 
+
+      
+
+      active1 = !active1;
+      active2 = !active2;
+      active3 = !active3;
+
+    });
+});</script>
+
+	
+	<div class="section">
+	<h2>What is Transfer Learning?</h2>
+	<p>Transfer learning is a machine learning technique where a model trained on one task is reused or adapted as a starting point for a model on a second related task. Instead of starting the learning process from scratch, transfer learning leverages knowledge gained from solving one problem and applies it to a different but related problem.
+	<br><br>
+	The key idea behind transfer learning is that models trained on large datasets for one task can capture general features and patterns that are useful for other tasks as well. By reusing the parameters and knowledge gained from the pre-trained model, transfer learning can significantly reduce the amount of labeled data and computational resources needed to train a new model from scratch.</p>
+	<h2>About Project</h2>
+	<p>In the vibrant world of entomology, the classification of butterflies has long been a pursuit of both scientific inquiry and aesthetic appreciation. With their kaleidoscopic wings and intricate patterns, butterflies offer a captivating subject for study and observation. In our project, titled "Multiclass Image Classification Using Transfer Learning", we delve into the realm of multiclass image classification using transfer learning techniques, with a specific focus on identifying and categorizing various species of butterflies.
+	<br><br>
+	Our goal is to leverage the power of transfer learning, a technique that has revolutionized the field of computer vision, to develop accurate and efficient models capable of classifying butterfly images into their respective species. To achieve this, we have curated a comprehensive dataset comprising over 4000 images encompassing 50 distinct types of butterflies.
+	We have trained and evaluated several state-of-the-art pre-trained models, including Inception, VGG, VGG19, ResNet, and Xception, to determine their efficecy in this task. 
+	<br><br>
+	By combining the wealth of knowledge encapsulated in pre-trained models with our specialized butterfly dataset, we seek to create a robust and adaptable framework for butterfly image classification. Through our project, we aspire to contribute to the field of biodiversity research, conservation efforts, and educational outreach, while also celebrating the unparalleled beauty and diversity of butterflies that grace our natural world. Join us on this journey as we embark on an exploration of FlutterNet and the enchanting realm of butterfly classification.</p>
+	
+	
+	<h2>Model &amp; Accuracies</h2>
+	<table>
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Accuracy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Inception</td>
+        <td>83</td>
+      </tr>
+      <tr>
+        <td>VGG</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>VGG</td>
+        <td>77</td>
+      </tr>
+      <tr>
+        <td>ResNet</td>
+        <td>89</td>
+      </tr>
+      <tr>
+        <td>Xception</td>
+        <td>85</td>
+      </tr>
+    </tbody>
+  </table>
+	
+	<h2>Categories of Butterflies used for Training</h2>
+	<ul>
+    <li>Adonis</li>
+    <li>American Snoot</li>
+    <li>An 88</li>
+    <li>Banded Peacock</li>
+    <li>Beckers White</li>
+    <li>Black Hairstreak</li>
+    <li>Cabbage White</li>
+    <li>Chestnut</li>
+    <li>Clodius Parnassian</li>
+    <li>Clouded Sulphur</li>
+    <li>Copper Tail</li>
+    <li>Crecent</li>
+    <li>Crimson Patch</li>
+    <li>Eastern Coma</li>
+    <li>Gold Banded</li>
+    <li>Great Eggfly</li>
+    <li>Grey Hairstreak</li>
+    <li>Indra Swallow</li>
+    <li>Julia</li>
+    <li>Large Marble</li>
+    <li>Malachite</li>
+    <li>Mangrove Skipper</li>
+    <li>Metalmark</li>
+    <li>Monarch</li>
+    <li>Morning Cloak</li>
+    <li>Orange Oakleaf</li>
+    <li>Orange Tip</li>
+    <li>Orchard Swallow</li>
+    <li>Painted Lady</li>
+    <li>Paper Kite</li>
+    <li>Peacock</li>
+    <li>Pine White</li>
+    <li>Pipevine Swallow</li>
+    <li>Purple Hairstreak</li>
+    <li>Question Mark</li>
+    <li>Red Admiral</li>
+    <li>Red Spotted Purple</li>
+    <li>Scarce Swallow</li>
+    <li>Silver Spot Skipper</li>
+    <li>Sixspot Burnet</li>
+    <li>Skipper</li>
+    <li>Sootywing</li>
+    <li>Southern Dogface</li>
+    <li>Straited Queen</li>
+    <li>Two Barred Flasher</li>
+    <li>Ulyses</li>
+    <li>Viceroy</li>
+    <li>Wood Satyr</li>
+    <li>Yellow Swallow Tail</li>
+    <li>Zebra Long Wing</li>
+  </ul>
+		
+		
+	</div>
+<footer class="footer-distributed">
+
+  <div class="footer-left">
+
+    <h3>Multiclass Image Classification<span><img style="height: 7.5vh; border-radius: 50%" src="{{url_for('static', filename='images/Butterfly.jpg')}}" alt=""></span></h3>
+	
+    <p class="footer-links">
+      <a href="/home" >Home</a>
+      <a href="/search">Search</a>
+      <a href="https://github.com/Prem-Jain/Multiclass-Image-Classification-Using-Transfer-Learning">Code</a>
+    </p>
+  </div>
+
+  <div class="footer-center">
+
+    <div>
+		<p>Project By</p>
+      	<i></i>
+      <p><span></span>K Naga Himaja (209X1A0566) <br>J Prem (209X1A0593) <br>K Madheswar (209X1A0597)</p>
+    </div>
+	<hr>
+    <div>
+		<p>Guided By</p>
+      <i></i>
+      <p>Dr. K.Ishthaq Ahamed<br>Associate Professor<br>Department of Computer Science &amp; Engineering <br>G. Pulla Reddy Engineering College</p>
+    </div>
+
+    <!--<div>
+      <i class="fa fa-envelope"></i>
+      <p><a href="mailto:support@company.com">support@company.com</a></p>
+    </div>-->
+
+  </div>
+
+  <div class="footer-right">
+
+    <p style="color: white; text-align: justify;" class="footer-company-about">
+      <span>About the application</span>
+      Leveraging Transfer Learning for Precise Multiclass Butterfly Image Recognition and Classification.
+    </p>
+  </div>
+	<hr>
+</footer>
+</body>
+</html>

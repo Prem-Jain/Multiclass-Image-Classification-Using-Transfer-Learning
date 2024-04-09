@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+.section{
+	margin: 0 auto;
+  text-align: center;
+  text-align: left;
+  width: 75%;
+  padding-top: 40px;
+}
+
+table{
+	margin-left: 25px;
+}
+td{
+	padding-right: 75px;
+}
+
+body::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  height: 257.2%;
+  width: 120px;
+  background-image: url("https://assets.codepen.io/2273448/sacred-seed-tile-white-opaque.svg");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 4.5rem auto;
+  opacity: 1;
+}
